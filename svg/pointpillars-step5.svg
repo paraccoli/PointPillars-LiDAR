@@ -1,0 +1,97 @@
+<svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+    <!-- 背景 -->
+    <rect width="800" height="500" fill="#f8fafc"/>
+    
+    <!-- タイトル -->
+    <text x="50" y="40" font-size="16" font-weight="bold">5. 3D物体検出出力</text>
+
+    <!-- 3D検出結果の可視化 -->
+    <g transform="translate(50,80)">
+        <!-- 座標系 -->
+        <g stroke="#94A3B8" stroke-width="1">
+            <line x1="0" y1="200" x2="300" y2="200"/> <!-- X軸 -->
+            <line x1="0" y1="200" x2="0" y2="0"/> <!-- Y軸 -->
+            <line x1="0" y1="200" x2="100" y2="150"/> <!-- Z軸 -->
+        </g>
+
+        <!-- 車両の3Dバウンディングボックス -->
+        <g stroke="#3B82F6" stroke-width="2" fill="none">
+            <!-- 前面 -->
+            <rect x="100" y="100" width="100" height="60"/>
+            <!-- 後面 -->
+            <rect x="130" y="70" width="100" height="60" stroke-dasharray="4"/>
+            <!-- 接続線 -->
+            <line x1="100" y1="100" x2="130" y2="70"/>
+            <line x1="200" y1="100" x2="230" y2="70"/>
+            <line x1="100" y1="160" x2="130" y2="130"/>
+            <line x1="200" y1="160" x2="230" y2="130"/>
+        </g>
+
+        <!-- 検出情報表示 -->
+        <g transform="translate(100,80)">
+            <rect x="0" y="0" width="120" height="50" fill="white" stroke="#3B82F6"/>
+            <text x="5" y="15" font-size="10">クラス: 車両</text>
+            <text x="5" y="30" font-size="10">信頼度: 0.92</text>
+            <text x="5" y="45" font-size="10">サイズ: 4.5m x 1.8m x 1.6m</text>
+        </g>
+    </g>
+
+    <!-- 検出出力の詳細説明 -->
+    <g transform="translate(450,80)" font-size="12">
+        <text x="0" y="0" font-weight="bold">検出出力の内容:</text>
+        
+        <text x="0" y="30" font-weight="bold">1. 位置情報</text>
+        <text x="20" y="50">・重心座標 (x, y, z)</text>
+        <text x="20" y="70">・回転角 (ヨー角)</text>
+        <text x="20" y="90">・3次元サイズ (長さ, 幅, 高さ)</text>
+
+        <text x="0" y="120" font-weight="bold">2. 信頼度スコア</text>
+        <text x="20" y="140">・クラス別確率</text>
+        <text x="20" y="160">・検出信頼度</text>
+        <text x="20" y="180">・方向推定確度</text>
+
+        <text x="0" y="210" font-weight="bold">3. 後処理</text>
+        <text x="20" y="230">・NMS (重複除去)</text>
+        <text x="20" y="250">・スコアフィルタリング</text>
+        <text x="20" y="270">・サイズ制約チェック</text>
+
+        <text x="0" y="300" font-weight="bold">4. 出力フォーマット</text>
+        <text x="20" y="320">・KITTI形式</text>
+        <text x="20" y="340">・JSON形式</text>
+        <text x="20" y="360">・カスタムフォーマット</text>
+    </g>
+
+    <!-- 精度指標の説明 -->
+    <g transform="translate(50,350)" font-size="12">
+        <text x="0" y="0" font-weight="bold">検出性能指標:</text>
+        <text x="20" y="25">・Average Precision (AP)</text>
+        <text x="20" y="45">・Intersection over Union (IoU)</text>
+        <text x="20" y="65">・検出距離範囲</text>
+        <text x="20" y="85">・方向推定誤差</text>
+    </g>
+
+    <!-- クラス別カラーコード -->
+    <g transform="translate(450,350)">
+        <text x="150" y="15" font-size="12" font-weight="bold">検出対象クラス:</text>
+        <g transform="translate(0,20)">
+            <rect x="150" y="5" width="15" height="15" fill="#3B82F6"/>
+            <text x="170" y="17" font-size="12">車両</text>
+        </g>
+        <g transform="translate(100,20)">
+            <rect x="100" y="5" width="15" height="15" fill="#34D399"/>
+            <text x="125" y="17" font-size="12">歩行者</text>
+        </g>
+        <g transform="translate(200,20)">
+            <rect x="70" y="5" width="15" height="15" fill="#F472B6"/>
+            <text x="95" y="17" font-size="12">自転車</text>
+        </g>
+    </g>
+
+    <!-- 矢印マーカーの定義 -->
+    <defs>
+        <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5"
+            markerWidth="6" markerHeight="6" orient="auto">
+            <path d="M 0 0 L 10 5 L 0 10 z"/>
+        </marker>
+    </defs>
+</svg>

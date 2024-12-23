@@ -1,0 +1,72 @@
+<svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+    <!-- 背景 -->
+    <rect width="800" height="500" fill="#f8fafc"/>
+    
+    <!-- タイトル -->
+    <text x="50" y="40" font-size="16" font-weight="bold">3. 特徴抽出プロセス</text>
+
+    <!-- ピラーから特徴への変換図 -->
+    <g transform="translate(50,80)">
+        <!-- 入力ピラー -->
+        <rect x="0" y="0" width="100" height="150" fill="#60A5FA" fill-opacity="0.2" stroke="#3B82F6"/>
+        <g fill="#EF4444">
+            <circle cx="30" cy="30" r="2"/>
+            <circle cx="40" cy="50" r="2"/>
+            <circle cx="60" cy="70" r="2"/>
+            <circle cx="50" cy="90" r="2"/>
+        </g>
+
+        <!-- 変換矢印 -->
+        <path d="M120,75 L180,75" stroke="#000" stroke-width="2" marker-end="url(#arrow)"/>
+        
+        <!-- 特徴ベクトル表現 -->
+        <g transform="translate(200,0)">
+            <rect x="0" y="0" width="150" height="150" fill="#F472B6" fill-opacity="0.1" stroke="#DB2777"/>
+            <!-- 特徴の視覚化 -->
+            <line x1="10" y1="30" x2="140" y2="30" stroke="#DB2777" stroke-width="2"/>
+            <line x1="10" y1="60" x2="100" y2="60" stroke="#DB2777" stroke-width="2"/>
+            <line x1="10" y1="90" x2="120" y2="90" stroke="#DB2777" stroke-width="2"/>
+            <line x1="10" y1="120" x2="80" y2="120" stroke="#DB2777" stroke-width="2"/>
+        </g>
+    </g>
+
+    <!-- 説明テキスト -->
+    <g transform="translate(450,80)" font-size="12">
+        <text x="0" y="0" font-weight="bold">特徴抽出の種類:</text>
+        
+        <text x="0" y="30" font-weight="bold">1. 幾何学的特徴</text>
+        <text x="20" y="50">・点の空間分布</text>
+        <text x="20" y="70">・法線ベクトル</text>
+        <text x="20" y="90">・曲率推定</text>
+
+        <text x="0" y="120" font-weight="bold">2. 統計的特徴</text>
+        <text x="20" y="140">・平均値と分散</text>
+        <text x="20" y="160">・最大・最小値</text>
+        <text x="20" y="180">・点の数と密度</text>
+
+        <text x="150" y="30" font-weight="bold">3. エンコード特徴</text>
+        <text x="170" y="50">・相対位置エンコード</text>
+        <text x="170" y="70">・中心点からの距離</text>
+        <text x="170" y="90">・高さ情報</text>
+
+        <text x="150" y="120" font-weight="bold">4. 反射強度特徴</text>
+        <text x="170" y="140">・強度の統計量</text>
+        <text x="170" y="160">・強度の分布</text>
+    </g>
+
+    <!-- 特徴次元の説明 -->
+    <g transform="translate(50,300)" font-size="12">
+        <text x="0" y="0" font-weight="bold">出力特徴ベクトル:</text>
+        <text x="20" y="25">・次元数: 64</text>
+        <text x="20" y="45">・正規化済み</text>
+        <text x="20" y="65">・スパース表現</text>
+    </g>
+
+    <!-- 矢印マーカーの定義 -->
+    <defs>
+        <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5"
+            markerWidth="6" markerHeight="6" orient="auto">
+            <path d="M 0 0 L 10 5 L 0 10 z"/>
+        </marker>
+    </defs>
+</svg>

@@ -1,0 +1,81 @@
+<svg viewBox="0 0 1000 600" xmlns="http://www.w3.org/2000/svg">
+
+    <!-- 背景 -->
+    <rect width="1000" height="600" fill="#f8fafc"/>
+    
+    <!-- タイトル -->
+    <text x="50" y="40" font-size="16" font-weight="bold">4. CNN処理プロセス</text>
+
+    <!-- CNN構造の図 -->
+    <g transform="translate(50,80)">
+        <!-- 入力層 -->
+        <rect x="0" y="0" width="80" height="80" fill="#60A5FA" fill-opacity="0.2" stroke="#3B82F6"/>
+        <text x="20" y="100" font-size="10">入力特徴マップ</text>
+        
+        <!-- Conv1 -->
+        <g transform="translate(120,0)">
+            <rect x="0" y="0" width="80" height="80" fill="#34D399" fill-opacity="0.3" stroke="#059669"/>
+            <text x="15" y="100" font-size="10">Conv1 (3x3)</text>
+        </g>
+
+        <!-- Conv2 -->
+        <g transform="translate(240,0)">
+            <rect x="0" y="0" width="80" height="80" fill="#34D399" fill-opacity="0.3" stroke="#059669"/>
+            <text x="15" y="100" font-size="10">Conv2 (3x3)</text>
+        </g>
+
+        <!-- Conv3 -->
+        <g transform="translate(360,0)">
+            <rect x="0" y="0" width="80" height="80" fill="#34D399" fill-opacity="0.3" stroke="#059669"/>
+            <text x="15" y="100" font-size="10">Conv3 (3x3)</text>
+        </g>
+
+        <!-- 接続線 -->
+        <g stroke="#94A3B8" stroke-width="2">
+            <path d="M80,40 L120,40" marker-end="url(#arrow)"/>
+            <path d="M200,40 L240,40" marker-end="url(#arrow)"/>
+            <path d="M320,40 L360,40" marker-end="url(#arrow)"/>
+        </g>
+    </g>
+
+    <!-- 説明テキスト -->
+    <g transform="translate(50,240)" font-size="12">
+        <text x="0" y="0" font-weight="bold">CNN層の構成:</text>
+        
+        <text x="0" y="30" font-weight="bold">1. 畳み込み層</text>
+        <text x="20" y="50">・フィルタサイズ: 3x3</text>
+        <text x="20" y="70">・ストライド: 1</text>
+        <text x="20" y="90">・パディング: 1</text>
+
+        <text x="0" y="120" font-weight="bold">2. バッチ正規化</text>
+        <text x="20" y="140">・学習の安定化</text>
+        <text x="20" y="160">・勾配消失の防止</text>
+
+        <text x="0" y="190" font-weight="bold">3. 活性化関数</text>
+        <text x="20" y="210">・ReLU</text>
+        <text x="20" y="230">・特徴の非線形変換</text>
+    </g>
+
+    <!-- チャネル数の説明 -->
+    <g transform="translate(450,200)" font-size="12">
+        <text x="0" y="0" font-weight="bold">各層のチャネル数:</text>
+        <text x="20" y="25">・入力層: 64チャネル</text>
+        <text x="20" y="45">・Conv1: 64 → 128チャネル</text>
+        <text x="20" y="65">・Conv2: 128 → 256チャネル</text>
+        <text x="20" y="85">・Conv3: 256 → 384チャネル</text>
+
+        <text x="0" y="115" font-weight="bold">特徴マップサイズ:</text>
+        <text x="20" y="140">・維持 (パディングあり)</text>
+        <text x="20" y="160">・空間情報の保持</text>
+        <text x="20" y="180">・高次元特徴の抽出</text>
+    </g>
+
+    <!-- 矢印マーカーの定義 -->
+    <defs>
+        <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5"
+            markerWidth="6" markerHeight="6" orient="auto">
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="#94A3B8"/>
+        </marker>
+    </defs>
+
+</svg>

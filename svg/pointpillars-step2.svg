@@ -1,0 +1,76 @@
+<svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+    <!-- 背景 -->
+    <rect width="800" height="500" fill="#f8fafc"/>
+    
+    <!-- タイトル -->
+    <text x="50" y="40" font-size="16" font-weight="bold">2. ピラー生成プロセス</text>
+
+    <!-- 3Dグリッド表現 -->
+    <g transform="translate(50,80)">
+        <!-- 手前のグリッド -->
+        <g stroke="#94A3B8" stroke-width="0.5">
+            <rect x="0" y="0" width="200" height="200" fill="none"/>
+            <line x1="50" y1="0" x2="50" y2="200"/>
+            <line x1="100" y1="0" x2="100" y2="200"/>
+            <line x1="150" y1="0" x2="150" y2="200"/>
+            <line x1="0" y1="50" x2="200" y2="50"/>
+            <line x1="0" y1="100" x2="200" y2="100"/>
+            <line x1="0" y1="150" x2="200" y2="150"/>
+        </g>
+
+        <!-- ピラーの表現 -->
+        <g>
+            <!-- ピラー1 -->
+            <rect x="50" y="50" width="50" height="50" fill="#60A5FA" fill-opacity="0.3" stroke="#3B82F6"/>
+            <line x1="50" y1="50" x2="70" y2="30" stroke="#3B82F6" stroke-dasharray="2,2"/>
+            <rect x="70" y="30" width="50" height="50" fill="#60A5FA" fill-opacity="0.1" stroke="#3B82F6"/>
+            
+            <!-- ピラー2 -->
+            <rect x="100" y="100" width="50" height="50" fill="#60A5FA" fill-opacity="0.3" stroke="#3B82F6"/>
+            <line x1="100" y1="100" x2="120" y2="80" stroke="#3B82F6" stroke-dasharray="2,2"/>
+            <rect x="120" y="80" width="50" height="50" fill="#60A5FA" fill-opacity="0.1" stroke="#3B82F6"/>
+        </g>
+
+        <!-- 点群の表現 -->
+        <g fill="#EF4444">
+            <circle cx="75" cy="75" r="2"/>
+            <circle cx="80" cy="70" r="2"/>
+            <circle cx="85" cy="80" r="2"/>
+            <circle cx="125" cy="125" r="2"/>
+            <circle cx="130" cy="120" r="2"/>
+            <circle cx="135" cy="130" r="2"/>
+        </g>
+    </g>
+
+    <!-- 説明テキスト -->
+    <g transform="translate(350,80)" font-size="12">
+        <text x="0" y="0" font-weight="bold">ピラー生成の詳細:</text>
+        <text x="20" y="25">・グリッドサイズ: 0.16m x 0.16m</text>
+        <text x="20" y="45">・最大ピラー数: 12000</text>
+        <text x="20" y="65">・1ピラーあたりの最大点数: 100</text>
+
+        <text x="0" y="95" font-weight="bold">ピラーの特徴:</text>
+        <text x="20" y="120">・空間的な点群の集約</text>
+        <text x="20" y="140">・垂直方向の情報保持</text>
+        <text x="20" y="160">・疎なピラーの除外処理</text>
+
+        <text x="250" y="" font-weight="bold">ピラーごとの計算:</text>
+        <text x="270" y="25">・点の平均位置(x̄, ȳ, z̄)</text>
+        <text x="270" y="45">・点の分散(σx, σy, σz)</text>
+        <text x="270" y="65">・反射強度の統計量</text>
+        <text x="270" y="85">・点の密度情報</text>
+
+        <text x="250" y="110" font-weight="bold">メモリ効率化:</text>
+        <text x="270" y="130">・疎行列形式での保存</text>
+        <text x="270" y="150">・動的なピラー割り当て</text>
+        <text x="270" y="170">・空のピラーのスキップ</text>
+    </g>
+
+    <!-- 凡例 -->
+    <g transform="translate(50,350)">
+        <rect x="0" y="0" width="20" height="20" fill="#60A5FA" fill-opacity="0.3" stroke="#3B82F6"/>
+        <text x="30" y="15" font-size="12">ピラー領域</text>
+        <circle cx="10" cy="40" r="4" fill="#EF4444"/>
+        <text x="30" y="45" font-size="12">点群データ</text>
+    </g>
+</svg>
